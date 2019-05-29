@@ -9,6 +9,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AccueilComponent } from './accueil/accueil.component';
 import { EtudesComponent } from './etudes/etudes.component';
 import { FooterComponent } from './footer/footer.component';
+import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
 
 const appRoutes: Routes = [
   {path: 'Equipe', component:EquipeComponent},
@@ -24,7 +25,8 @@ const appRoutes: Routes = [
     EquipeComponent,
     AccueilComponent,
     EtudesComponent,
-    FooterComponent
+    FooterComponent,
+    ScrollToTopComponent
   ],
   imports: [
     BrowserModule,
