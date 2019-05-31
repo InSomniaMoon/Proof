@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { Collapse } from 'bootstrap/js/dist/collapse.js';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -10,6 +11,7 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { EtudesComponent } from './etudes/etudes.component';
 import { FooterComponent } from './footer/footer.component';
 import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
+
 
 const appRoutes: Routes = [
   {path: 'Equipe', component:EquipeComponent},
@@ -34,5 +36,7 @@ const appRoutes: Routes = [
   ],
   providers: [],
   bootstrap: [AppComponent]
+
+  
 })
 export class AppModule { }
