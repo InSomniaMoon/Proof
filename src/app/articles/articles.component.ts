@@ -29,7 +29,6 @@ export class ArticlesComponent implements OnInit {
   }
 
   //#region gets
-
   public getSummaryURL(idlist: string): string {return this.baseURL + "efetch.fcgi?db="+ this.db + "&id=" + idlist + "&rettype=xml";}
   public getSearchUrl(term: string): string { return this.baseURL + "esearch.fcgi?db=PubMed&term=SNA-EPIS+"+term; }
   public sleep(time) {

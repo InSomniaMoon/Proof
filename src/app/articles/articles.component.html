@@ -4,7 +4,7 @@
 
     <!-- Recherche d'éléments -->
     <div class="card border-0 rounded mt-3 mb-5 mx-auto"
-         style="background:linear-gradient(rgba(92, 199, 237,0.9),rgba(92, 199, 237,0.1))" id="Rechercher">
+         style="background:linear-gradient(rgba(92, 199, 237,0.9),rgba(92, 199, 237,0))" id="Rechercher">
       <h3 class="text-center card-title mt-2">Rechercher</h3>
       <div class="col-9 mx-auto text-center row mb-4">
 
@@ -39,72 +39,27 @@
       <div class="cardbody">
         <h3 class="text-center card-title">Zone de tests</h3>
         <p class="card-text mx-2 mb-2">
-          getSummaryURL : {{getSummaryURL(getIdList(''))}}
           <br />
-
           <br />
         </p>
       </div>
     </div>
 
     <br />
-    <!-- <div *ngFor="let sum of summaries.PubmedArticleSet.PubmedArticle" class="card shadow border-0 rounded mt-5 mb-5">
-    <div class="cardbody">
-      <h3 class="text-center card-title">{{//sum.}} - {{ //sum.Item[22]._text }}</h3>
-      <h5 class="card-subtitle">
-        <ul class="row text-center">
-          <li *ngFor="let auth of sum.Item[3].Item" style="list-style-type: none">{{ //auth._text }}, </li>
-        </ul>
-      </h5>
-      <p class="card-text mx-2 mb-2">
+    <div *ngFor="let sum of summaries.PubmedArticleSet.PubmedArticle" class="card shadow border-0 rounded mt-5 mb-5">
+      <div class="cardbody mx-auto" >
+        <h3 *ngIf="sum.MedlineCitation.Article.ArticleTitle._text !== undefined || sum.MedlineCitation.Article.Journal.Title._text !== undefined" class="text-center card-title"><a href="{{'https://www.ncbi.nlm.nih.gov/pubmed/'+sum.PubmedData.ArticleIdList.ArticleId[0]._text}}">{{ sum.MedlineCitation.Article.ArticleTitle._text}} - {{ sum.MedlineCitation.Article.Journal.Title._text }}</a></h3>
 
-        <br />
-      </p>
+        <ul class="row text-center">
+          <li *ngFor="let auth of sum.MedlineCitation.Article.AuthorList.Author" style="list-style-type: none"><h5 class="card-subtitle">{{ auth.Initials._text }}.{{ auth.LastName._text}}, &#x20; </h5></li>
+        </ul>
+
+        <p *ngIf="sum.MedlineCitation.Article.Abstract !== undefined" class="card-text mx-2 mb-2">
+          {{sum.MedlineCitation.Article.Abstract.AbstractText._text}}<br />
+        </p>
+      </div>
     </div>
-  </div>-->
 
     <br>
-    <div id="test">
-      <div class="card shadow border-0 rounded mt-5 mb-5">
-        <div class="cardbody">
-          <h3 class="text-center card-title">{{ title }}</h3>
-          <h4 class="text-center card-subtitle"> {{ subtitle }}</h4>
-
-          <p class="card-text mx-2 mb-2">
-            {{ abstract }} <br />
-          </p>
-        </div>
-      </div>
-      <div class="card shadow border-0 rounded mt-5 mb-5">
-        <div class="cardbody">
-          <h3 class="text-center card-title">{{ title }}</h3>
-          <h4 class="text-center card-subtitle"> {{ subtitle }}</h4>
-
-          <p class="card-text mx-2 mb-2">
-            {{ abstract }} <br />
-          </p>
-        </div>
-      </div>
-      <div class="card shadow border-0 rounded mt-5 mb-5">
-        <div class="cardbody">
-          <h3 class="text-center card-title">{{ title }}</h3>
-          <h4 class="text-center card-subtitle"> {{ subtitle }}</h4>
-
-          <p class="card-text mx-2 mb-2">
-            {{ abstract }} <br />
-          </p>
-        </div>
-      </div>
-      <div class="card shadow border-0 rounded mt-5 mb-5">
-        <div class="cardbody">
-          <h3 class="text-center card-title">{{ title }}</h3>
-          <h4 class="text-center card-subtitle"> {{ subtitle }}</h4>
-
-          <p class="card-text mx-2 mb-2">
-            {{ abstract }} <br />
-          </p>
-        </div>
-      </div>
-    </div>
 
   </div>
