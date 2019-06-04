@@ -1,52 +1,110 @@
-<div class="col-lg-9 mx-auto">
-  <!-- Recherche d'éléments -->
-  <div class="card border-0 rounded mt-3 mb-5 mx-auto"
-    style="background:linear-gradient(rgba(92, 199, 237,0.9),rgba(92, 199, 237,0.1))" id="Rechercher">
-    <h3 class="text-center card-title mt-2">Rechercher</h3>
-    <div class="col-9 mx-auto text-center row mb-4">
 
-      <div class="col-lg-6 col-sm-12 mt-2 mb-4 mx-auto">
-        <label for="inuptAuthor">Recherche par auteur</label><br />
-        <input type="text" name="author" id="inputAuthor"><br />
 
-        <label for="inputYear">Recherche par année</label><br />
-        <input type="text" name="year" id="inputYear"><br />
+  <div class="col-lg-9 mx-auto">
+
+    <!-- Recherche d'éléments -->
+    <div class="card border-0 rounded mt-3 mb-5 mx-auto"
+         style="background:linear-gradient(rgba(92, 199, 237,0.9),rgba(92, 199, 237,0.1))" id="Rechercher">
+      <h3 class="text-center card-title mt-2">Rechercher</h3>
+      <div class="col-9 mx-auto text-center row mb-4">
+
+        <div class="col-lg-6 col-sm-12 mt-2 mb-4 mx-auto">
+          <label for="inuptAuthor">Recherche par auteur</label><br />
+          <input type="text" name="author" id="inputAuthor"><br />
+
+          <label for="inputYear">Recherche par année</label><br />
+          <input type="text" name="year" id="inputYear"><br />
+        </div>
+
+        <div class="col-lg-6 col-sm-12 mt-2 mb-4">
+          <label for="inputKeyWord">Recherche par mots clés</label><br />
+          <input type="text" name="keyWord" id="inputKeyWord"><br />
+
+          <label for="inputPaper">Recherche par Revue</label><br />
+          <input type="text" name="paper" id="inputPaper"><br />
+        </div>
+
+        <div class="mx-auto col-lg-4 col-sm-6">
+          <input type="submit" class="btn btn-secondary" value="Rechercher">
+        </div>
       </div>
-
-      <div class="col-lg-6 col-sm-12 mt-2 mb-4">
-        <label for="inputKeyWord">Recherche par mots clés</label><br />
-        <input type="text" name="keyWord" id="inputKeyWord"><br />
-
-        <label for="inputPaper">Recherche par Revue</label><br />
-        <input type="text" name="paper" id="inputPaper"><br />
-      </div>
-
-      <div class="mx-auto col-lg-4 col-sm-6">
-        <input type="submit" class="btn btn-secondary" value="Rechercher">
-      </div>
-
     </div>
-  </div>
-  <!-- /Recherche d'éléments -->
 
-  <!-- artcles -->
-  <div class="card shadow border-0 rounded mt-5 mb-5 mx-auto">
+    <div class="alert alert-light text-center" role="alert">
+      Nombre d'articles trouvés : {{ ArticleNumber }}
+    </div>
+    <!-- /Recherche d'éléments -->
+    <!-- articles -->
+    <div class="card shadow border-0 rounded mt-5 mb-5 mx-auto">
+      <div class="cardbody">
+        <h3 class="text-center card-title">Zone de tests</h3>
+        <p class="card-text mx-2 mb-2">
+          getSummaryURL : {{getSummaryURL(getIdList(''))}}
+          <br />
+
+          <br />
+        </p>
+      </div>
+    </div>
+
+    <br />
+    <!-- <div *ngFor="let sum of summaries.PubmedArticleSet.PubmedArticle" class="card shadow border-0 rounded mt-5 mb-5">
     <div class="cardbody">
-      <h3 class="text-center card-title">Zone de tests</h3>
+      <h3 class="text-center card-title">{{//sum.}} - {{ //sum.Item[22]._text }}</h3>
+      <h5 class="card-subtitle">
+        <ul class="row text-center">
+          <li *ngFor="let auth of sum.Item[3].Item" style="list-style-type: none">{{ //auth._text }}, </li>
+        </ul>
+      </h5>
       <p class="card-text mx-2 mb-2">
-          <button (click)=(test())>fichier XML</button>  <br/><br />
-          <button (click)=(setIdList())>getIdList</button>  <br/><br />
+
+        <br />
       </p>
     </div>
-  </div>
+  </div>-->
 
-  <br />
-  <div class="card shadow border-0 rounded mt-5 mb-5">
-    <div class="cardbody">
-      <h3 class="text-center card-title">{{ getTitle() }}</h3>
-      <p class="card-text mx-2 mb-2">
-        {{ getAbstract() }} <br />
-      </p>
+    <br>
+    <div id="test">
+      <div class="card shadow border-0 rounded mt-5 mb-5">
+        <div class="cardbody">
+          <h3 class="text-center card-title">{{ title }}</h3>
+          <h4 class="text-center card-subtitle"> {{ subtitle }}</h4>
+
+          <p class="card-text mx-2 mb-2">
+            {{ abstract }} <br />
+          </p>
+        </div>
+      </div>
+      <div class="card shadow border-0 rounded mt-5 mb-5">
+        <div class="cardbody">
+          <h3 class="text-center card-title">{{ title }}</h3>
+          <h4 class="text-center card-subtitle"> {{ subtitle }}</h4>
+
+          <p class="card-text mx-2 mb-2">
+            {{ abstract }} <br />
+          </p>
+        </div>
+      </div>
+      <div class="card shadow border-0 rounded mt-5 mb-5">
+        <div class="cardbody">
+          <h3 class="text-center card-title">{{ title }}</h3>
+          <h4 class="text-center card-subtitle"> {{ subtitle }}</h4>
+
+          <p class="card-text mx-2 mb-2">
+            {{ abstract }} <br />
+          </p>
+        </div>
+      </div>
+      <div class="card shadow border-0 rounded mt-5 mb-5">
+        <div class="cardbody">
+          <h3 class="text-center card-title">{{ title }}</h3>
+          <h4 class="text-center card-subtitle"> {{ subtitle }}</h4>
+
+          <p class="card-text mx-2 mb-2">
+            {{ abstract }} <br />
+          </p>
+        </div>
+      </div>
     </div>
+
   </div>
-</div>

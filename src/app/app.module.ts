@@ -11,6 +11,7 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { EtudesComponent } from './etudes/etudes.component';
 import { FooterComponent } from './footer/footer.component';
 import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
+import { ArticleComponent } from './article/article.component';
 
 
 const appRoutes: Routes = [
@@ -28,7 +29,8 @@ const appRoutes: Routes = [
     AccueilComponent,
     EtudesComponent,
     FooterComponent,
-    ScrollToTopComponent
+    ScrollToTopComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,
