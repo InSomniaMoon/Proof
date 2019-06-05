@@ -1,7 +1,7 @@
   <div class="row mx-auto justify-content-center col-11 mx-auto">
   <div *ngFor="let member of uneEquipe" class="card col-lg-2 col-md-5 col-xs-12 mx-2 mb-2 mt-2" style="background:rgba(105,173,227,0.9)">
 
-      <img *ngIf="uneEquipe.indexOf(member)%2 == 1" src="assets/img/user.png" class="mx-auto" alt="..." style="width:100%">
+      <img *ngIf="uneEquipe.indexOf(member)%2 == 1" src="assets/img/user.png" class="prmx-auto" alt="..." style="width:100%">
     <div class="card-body mx-auto">
       <h5 class="card-title">{{member.name}}</h5>
       <p class="card-text">{{member.title}}<br /></p>
@@ -9,11 +9,4 @@
     <img *ngIf="uneEquipe.indexOf(member)%2 == 0" src="assets/img/user.png" class=" mx-auto" alt="..." style="width:100%;">
   </div>
 
-<!--<div class="card col-2 mx-2 mb-2 mt-2">
-  <img src="assets/img/user.png" class="card-img-top mx-auto" alt="..." style="width:80%">
-  <div class="card-body mx-auto">
-    <h5 class="card-title">{{member.name}}</h5>
-    <p class="card-text">{{member.title}}</p>
-  </div>
-</div>-->
 </div>

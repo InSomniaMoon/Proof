@@ -109,7 +109,7 @@ export class EquipeComponent implements OnInit {
       "title": "PU - PH"
     }
   ];
-  public i;
+
   constructor() { }
  
   ngOnInit() {
