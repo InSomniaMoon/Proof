@@ -1,12 +1,10 @@
-  <div class="row mx-auto justify-content-center col-11 mx-auto">
-  <div *ngFor="let member of uneEquipe" class="card col-lg-2 col-md-5 col-xs-12 mx-2 mb-2 mt-2" style="background:rgba(105,173,227,0.9)">
-
-      <img *ngIf="uneEquipe.indexOf(member)%2 == 1" src="assets/img/user.png" class="prmx-auto" alt="..." style="width:100%">
-    <div class="card-body mx-auto">
+<div class="row mx-auto justify-content-center col-11 mx-auto">
+  <div *ngFor="let member of uneEquipe" class="card col-lg-2 col-md-5 col-xs-12 mx-2 mb-2 mt-2 blue" style="padding-left :0px; padding-right:0px">
+    <img *ngIf="uneEquipe.indexOf(member)%2 == 1" src="assets/img/templatePhotoMembre.svg" class="mx-auto" alt="..." style="width:100%">
+    <div class="card-body">
       <h5 class="card-title">{{member.name}}</h5>
-      <p class="card-text">{{member.title}}<br /></p>
+      <p class="card-subtitle">{{member.title}}<br /></p>
     </div>
-    <img *ngIf="uneEquipe.indexOf(member)%2 == 0" src="assets/img/user.png" class=" mx-auto" alt="..." style="width:100%;">
+    <img *ngIf="uneEquipe.indexOf(member)%2 == 0" src="assets/img/templatePhotoMembre.svg" class=" mx-auto" alt="..." style="width:100%">
   </div>
-
 </div>

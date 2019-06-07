@@ -10,7 +10,7 @@ export class EquipeComponent implements OnInit {
   public uneEquipe = [
     {
       "name": "BART Nathalie",
-      "title": "Ing."
+      "title": "Ingénieur"
     },
     {
       "name": " BARTHELEMY Jean-Claude",
@@ -22,7 +22,7 @@ export class EquipeComponent implements OnInit {
     },
     {
       "name": "BONGUE Bienvenu",
-      "title": "Pharma.Epidemiol."
+      "title": "Pharmacien Epidemiologiste"
     },
     {
       "name": "CAMBAZARD Frédéric",
@@ -30,7 +30,7 @@ export class EquipeComponent implements OnInit {
     },
     {
       "name": "CELLE Sebastien",
-      "title": "Ing."
+      "title": "Ingénieur"
     },
     {
       "name": "COURT - FORTUNE Isabelle",
@@ -42,11 +42,11 @@ export class EquipeComponent implements OnInit {
     },
     {
       "name": "GARCIN Arnauld",
-      "title": "Ing."
+      "title": "Ingénieur"
     },
     {
       "name": "GARET Martin",
-      "title": "Ing."
+      "title": "Ingénieur"
     },
     {
       "name": "HUPIN David",
@@ -58,7 +58,7 @@ export class EquipeComponent implements OnInit {
     },
     {
       "name": "MAUDOUX Delphine",
-      "title": "Ing."
+      "title": "Ingénieur"
     },
     {
       "name": "MOLLIEX Serge",
@@ -66,7 +66,7 @@ export class EquipeComponent implements OnInit {
     },
     {
       "name": "NOEL Kelig",
-      "title": "Ing."
+      "title": "Ingénieur"
     },
     {
       "name": "PATURAL Hugues",
@@ -78,7 +78,7 @@ export class EquipeComponent implements OnInit {
     },
     {
       "name": "PICHOT Vincent",
-      "title": "Ing."
+      "title": "Ingénieur"
     },
     {
       "name": "ROCHE Frédéric",

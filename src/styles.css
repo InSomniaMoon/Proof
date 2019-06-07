@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 .blue {
-    background: rgba(58,158,203,0.9);
+    background: rgba(58,158,203,0.9)!important;
 }
 .single-service-img {
   width: 205px;

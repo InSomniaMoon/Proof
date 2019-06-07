@@ -1,64 +1,39 @@
 
 
-  <div class="col-lg-9 mx-auto">
+<div class="col-lg-9 mx-auto">
 
-    <!-- Recherche d'éléments -->
-    <div class="card border-0 rounded mt-3 mb-5 mx-auto" style="background:linear-gradient(rgba(92, 199, 237,0.9),rgba(92, 199, 237,0))">
-      <h3 class="text-center card-title mt-2">Rechercher</h3>
-      <div class="col-9 mx-auto text-center row mb-4">
+  <!-- Recherche d'éléments -->
+  <app-search  (searchTerm)="convertXmlJson(getXMLDocFromURL(getSummaryURL(getIdList($event))))"></app-search>
+  <div class="alert alert-light text-center" role="alert" i18n>
+    Nombre d'articles trouvés : {{ ArticleNumber }}
+  </div>
+  <!-- /Recherche d'éléments -->
+  <br />
+  <!-- articles -->
+  <div *ngFor="let sum of summaries.PubmedArticleSet.PubmedArticle" class="card shadow border-0 rounded mt-5 mb-5">
+    <div class="cardbody mx-auto mr-2 ml-2">
+      <h3 *ngIf="sum.MedlineCitation.Article.ArticleTitle !== undefined || sum.MedlineCitation.Article.Journal.Title !== undefined" class="text-center card-title"><a href="{{'https://www.ncbi.nlm.nih.gov/pubmed/'+sum.PubmedData.ArticleIdList.ArticleId[0]._text}}">{{ sum.MedlineCitation.Article.ArticleTitle._text}} - {{ sum.MedlineCitation.Article.Journal.Title._text }}</a></h3>
 
-        <div class="col-lg-6 col-sm-12 mt-2 mb-4 mx-auto">
-          <label for="inuptAuthor">Recherche par auteur</label><br />
-          <input type="text" name="author" id="inputAuthor"><br />
-
-          <label for="inputYear">Recherche par année</label><br />
-          <input type="text" name="year" id="inputYear"><br />
-        </div>
-
-        <div class="col-lg-6 col-sm-12 mt-2 mb-4">
-          <label for="inputKeyWord">Recherche par mots clés</label><br />
-          <input type="text" name="keyWord" id="inputKeyWord"><br />
-
-          <label for="inputPaper">Recherche par Revue</label><br />
-          <input type="text" name="paper" id="inputPaper"><br />
-        </div>
-
-        <div class="mx-auto col-lg-4 col-sm-6">
-          <button (click)="Search(document.getElementById('inputAuthor').textContent)" class="btn btn-secondary">Rechercher</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="alert alert-light text-center" role="alert">
-      Nombre d'articles trouvés : {{ ArticleNumber }}
-    </div>
-    <!-- /Recherche d'éléments -->
-
-    <!-- articles -->
-    <br />
-    <div *ngFor="let sum of summaries.PubmedArticleSet.PubmedArticle" class="card shadow border-0 rounded mt-5 mb-5">
-      <div class="cardbody mx-auto">
-        <h3 *ngIf="sum.MedlineCitation.Article.ArticleTitle !== undefined || sum.MedlineCitation.Article.Journal.Title !== undefined" class="text-center card-title"><a href="{{'https://www.ncbi.nlm.nih.gov/pubmed/'+sum.PubmedData.ArticleIdList.ArticleId[0]._text}}">{{ sum.MedlineCitation.Article.ArticleTitle._text}} - {{ sum.MedlineCitation.Article.Journal.Title._text }}</a></h3>
-
-        <ul class="row text-center" *ngIf="sum.MedlineCitation.Article.AuthorList.Author.__proto__ == '';else authsimple">
-          <li *ngFor="let auth of sum.MedlineCitation.Article.AuthorList.Author" style="list-style-type: none;">
-            <h5 id="auth" *ngIf="auth.LastName !== undefined" class="card-subtitle mr-3">{{auth.Initials._text }}.{{ auth.LastName._text}}</h5>
+      <ul class="row text-center" *ngIf="sum.MedlineCitation.Article.AuthorList.Author.__proto__ == '';else authsimple">
+        <li *ngFor="let auth of sum.MedlineCitation.Article.AuthorList.Author" style="list-style-type: none;">
+          <h5 id="auth" *ngIf="auth.LastName !== undefined" class="card-subtitle mr-3">{{auth.Initials._text }}.{{ auth.LastName._text}}</h5>
+        </li>
+      </ul>
+      <ng-template #authsimple>
+        <ul class="row text-center">
+          <li *ngIf="sum.MedlineCitation.Article.AuthorList.Author.LastName !== undefined" style="list-style-type: none;">
+            <h5 id="auth" class="card-subtitle">{{sum.MedlineCitation.Article.AuthorList.Author.Initials._text}}.{{sum.MedlineCitation.Article.AuthorList.Author.LastName._text}}</h5>
           </li>
         </ul>
-        <ng-template #authsimple>
-          <ul  class="row text-center">
-            <li *ngIf="sum.MedlineCitation.Article.AuthorList.Author.LastName !== undefined" style="list-style-type: none;">
-              <h5 id="auth" class="card-subtitle">{{sum.MedlineCitation.Article.AuthorList.Author.Initials._text}}.{{sum.MedlineCitation.Article.AuthorList.Author.LastName._text}}</h5>
-            </li>
-          </ul>
-        </ng-template>
+      </ng-template>
 
-        <p *ngIf="sum.MedlineCitation.Article.Abstract !== undefined" class="card-text mx-2 mb-2">
-          {{sum.MedlineCitation.Article.Abstract.AbstractText._text}}<br />
-        </p>
-      </div>
+      <p *ngIf="sum.MedlineCitation.Article.Abstract !== undefined" class="card-text mx-2 mb-2">
+        {{sum.MedlineCitation.Article.Abstract.AbstractText._text}}<br />
+      </p>
+      <p class="text-right mr-4" *ngIf="sum.MedlineCitation.Article.Journal.JournalIssue.PubDate.Year !== undefined" style="text-decoration:underline;">
+        <span *ngIf="sum.MedlineCitation.Article.Journal.JournalIssue.PubDate.Month !== undefined">{{sum.MedlineCitation.Article.Journal.JournalIssue.PubDate.Month._text}}<span *ngIf="sum.MedlineCitation.Article.Journal.JournalIssue.PubDate.Day !== undefined"> - {{sum.MedlineCitation.Article.Journal.JournalIssue.PubDate.Day._text}}</span>, </span>{{sum.MedlineCitation.Article.Journal.JournalIssue.PubDate.Year._text}}
+      </p>
     </div>
-
-    <br>
-
   </div>
+  <br>
+</div>

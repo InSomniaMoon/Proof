@@ -1,17 +1,6 @@
-import { Component, OnInit, Input} from '@angular/core';
 import { xml2js } from 'node_modules/xml-js/lib';
-import { SearchArticles } from '../class/SearchArticles';
 
-
-@Component({
-  selector: 'app-articles',
-  templateUrl: './articles.component.html',
-  styleUrls: ['./articles.component.css'],
-
-})
-export class ArticlesComponent implements OnInit {
-  public summary;
-  public machin = new SearchArticles();
+export class SearchArticles {
   public ArticleNumber;
   public summaries;
   private baseURL;
@@ -23,9 +12,6 @@ export class ArticlesComponent implements OnInit {
     this.baseURL = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/";
     this.db = "PubMed";
     this.convertXmlJson(this.getXMLDocFromURL(this.getSummaryURL(this.getIdList(''))));
-  }
-
-  ngOnInit() {
   }
 
   public convertXmlJson(xml: any) {
@@ -68,5 +54,5 @@ export class ArticlesComponent implements OnInit {
     return this.req.responseText;
   }
   //#endregion
-  
+
 }

@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { Collapse } from 'bootstrap/js/dist/collapse.js';
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ArticlesComponent } from './articles/articles.component';
@@ -11,13 +10,17 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { EtudesComponent } from './etudes/etudes.component';
 import { FooterComponent } from './footer/footer.component';
 import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
+import { SearchComponent } from './search/search.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 const appRoutes: Routes = [
-  {path: 'Equipe', component:EquipeComponent},
-  {path : 'Articles', component:ArticlesComponent},
-  {path: '', component:AccueilComponent},
-  {path: 'Etudes', component:EtudesComponent}
+  { path: 'Equipes', component:EquipeComponent },
+  { path: 'Articles', component: ArticlesComponent },
+  { path: '', component:AccueilComponent },
+  { path: 'Etudes', component: EtudesComponent },
+  { path: 'PageNotFound', component: PageNotFoundComponent },
+  { path: '**', redirectTo: 'PageNotFound' }
 ]
 @NgModule({
   declarations: [
@@ -28,11 +31,15 @@ const appRoutes: Routes = [
     AccueilComponent,
     EtudesComponent,
     FooterComponent,
-    ScrollToTopComponent
+    ScrollToTopComponent,
+    SearchComponent,
+    PageNotFoundComponent,
+    
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

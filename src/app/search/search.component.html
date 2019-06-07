@@ -1,0 +1,16 @@
+<div class="card border-0 rounded mt-3 mb-5 mx-auto" style="background:linear-gradient(rgba(92, 199, 237,0.9),rgba(92, 199, 237,0))">
+  <h3 class="text-center card-title mt-2" i18n>Rechercher</h3>
+
+  <div class="col-9 mx-auto text-center mb-4" novalidate>
+
+
+    <div class="col-lg-6 col-sm-12 mt-2 mb-4 mx-auto">
+      <input type="text" name="searchItem" placeholder="Rechercher..." i18n-placeholder="@@RechercherPlaceholder" [(ngModel)]=searchItem /><br />
+    </div>
+
+    <div class="mx-auto col-lg-4 col-sm-6">
+      <button (click)="search()" class="btn btn-secondary" i18n>Rechercher</button>
+    </div>
+  </div>
+
+</div>
