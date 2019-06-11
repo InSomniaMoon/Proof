@@ -3,14 +3,14 @@
 <div class="col-lg-9 mx-auto">
 
   <!-- Recherche d'éléments -->
-  <app-search  (searchTerm)="convertXmlJson(getXMLDocFromURL(getSummaryURL(getIdList($event))))"></app-search>
+  <app-search  (searchTerm)="searcher.convertXmlJson(searcher.getXMLDocFromURL(searcher.getSummaryURL(searcher.getIdList($event))))"></app-search>
   <div class="alert alert-light text-center" role="alert" i18n>
-    Nombre d'articles trouvés : {{ ArticleNumber }}
+    Nombre d'articles trouvés : {{ searcher.getArticlesNumber() }}
   </div>
   <!-- /Recherche d'éléments -->
   <br />
   <!-- articles -->
-  <div *ngFor="let sum of summaries.PubmedArticleSet.PubmedArticle" class="card shadow border-0 rounded mt-5 mb-5">
+  <div *ngFor="let sum of searcher.getSummaries().PubmedArticleSet.PubmedArticle" class="card shadow border-0 rounded mt-5 mb-5">
     <div class="cardbody mx-auto mr-2 ml-2">
       <h3 *ngIf="sum.MedlineCitation.Article.ArticleTitle !== undefined || sum.MedlineCitation.Article.Journal.Title !== undefined" class="text-center card-title"><a href="{{'https://www.ncbi.nlm.nih.gov/pubmed/'+sum.PubmedData.ArticleIdList.ArticleId[0]._text}}">{{ sum.MedlineCitation.Article.ArticleTitle._text}} - {{ sum.MedlineCitation.Article.Journal.Title._text }}</a></h3>
 

@@ -1,4 +1,5 @@
-import { Component, Output } from '@angular/core';
+import { Component } from '@angular/core';
+import { SearchArticles } from './class/SearchArticles';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,7 @@ import { Component, Output } from '@angular/core';
 export class AppComponent {
   title = 'ProofAlpha';
 
+  constructor() {
+  }
   ngOnInit() {}
 }
