@@ -1,29 +1,30 @@
 	
   <!-- Footer-->
-  <div class="card card-body card-dark bg-dark mt-5 mx-auto" style="border-radius:0">
+  <div class="card card-body card-dark bg-dark mx-auto" style="border-radius:0">
     <div class="row text-center">
-      <div class="col-lg-5 col-sm-5 col-xs-12">
-        <div class="row">
-          <h5 class="mx-auto text-white" style="text-decoration: underline;" i18n>Adresse Postale</h5>
-        </div>
-        <div class="row col-10 mx-auto">
-          <p class="text-white text-right">
+      <div class="col-lg-5 col-sm-5 col-xs-12 mb-2">
+        <h5 class="mx-auto text-white" style="text-decoration: underline;" i18n>Laboratoire SNA-EPIS</h5>
+          <p class="text-white text-left text-md-right text-lg-right mr-5">
             Système nerveux autonome - Epidémiologie, Physiologie, Ingénierie, Santé<br />
             Centre VISAS<br />
             CHU Nord Bâtiment A niveau 3 <br />
             42055 Saint-Etienne cedex 2 <br />
           </p>
-        </div>
-      </div>
-      <div class="col-lg-3 col-sm-2 col-xs-12">
-        <a href="" target="_blank">l'association Synapse montée par les sujets de la cohorte</a>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2797.393136683777!2d4.360774715558053!3d45.48202747910119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f5ab8647d2f4d3%3A0x9de05a52e8a331ad!2sCHU+NORD+SAINT-ETIENNE!5e0!3m2!1sfr!2sfr!4v1559133592625!5m2!1sfr!2sfr" width="100%" height="85%" frameborder="0" style="border:0" allowfullscreen></iframe>
+          <button class="btn-blue" [routerLink]="['/Contact']">Contacter par mail</button>
       </div>
 
-      <div class="col-lg-4 col-sm-5 col-xs-12">
-        <div class="row">
-          <h5 class="mx-auto text-white" style="text-decoration: underline;" i18n>Nous contacter</h5>
-        </div>
+      <div class="col-lg-3 col-sm-3 col-xs-12">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2797.393136683777!2d4.360774715558053!3d45.48202747910119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f5ab8647d2f4d3%3A0x9de05a52e8a331ad!2sCHU+NORD+SAINT-ETIENNE!5e0!3m2!1sfr!2sfr!4v1559133592625!5m2!1sfr!2sfr" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+
+      <div class="col-lg-4 col-sm-3 col-xs-12">
+        <h5 class="mx-auto text-white" style="text-decoration: underline;" i18n>Synapse</h5>
+        <p class="text-white text-left ml-3">
+          SYNAPSE <br />
+          Association Loi de 1901 <br />
+          17, place du Bicentenaire 42100 Saint-Etienne.
+        </p>
+        <button class="btn-blue" onclick="window.open('http://synapse-recherche42.org/')">Aller sur le site de l'association</button>
       </div>
     </div>
   </div>
