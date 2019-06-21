@@ -10,5 +10,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  public closeMenu() {
+    document.getElementById('navbarSupportedContent').classList.remove('show');
+  }
 }

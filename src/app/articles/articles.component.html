@@ -22,7 +22,7 @@
       <ng-template #authsimple>
         <ul class="row text-center">
           <li *ngIf="sum.MedlineCitation.Article.AuthorList.Author.LastName !== undefined" style="list-style-type: none;">
-            <h5 id="auth" class="card-subtitle">{{sum.MedlineCitation.Article.AuthorList.Author.Initials._text}}.{{sum.MedlineCitation.Article.AuthorList.Author.LastName._text}}</h5>
+            <h5 id="auth" class="card-subtitle">{{sum.MedlineCitation.Article.AuthorList.Author.Initials._text}}. & {{sum.MedlineCitation.Article.AuthorList.Author.LastName._text}}</h5>
           </li>
         </ul>
       </ng-template>

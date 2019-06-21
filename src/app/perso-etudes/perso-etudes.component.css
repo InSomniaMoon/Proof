@@ -1,0 +1,108 @@
+
+#silouette {
+  background-image:url('../../assets/img/silouhette.svg') ;
+  background-size:contain;
+  background-position-x:center;
+  background-repeat:no-repeat; 
+}
+button {
+  padding: 0.25rem 1rem;
+  margin-bottom: .5rem;
+  border: 1px solid transparent;
+  position:relative;
+  border-radius: 0.5rem;
+  font-size: 18px;
+  color: white;
+  transition: 2s;
+  background-color: #E6AF42;
+}
+
+#cerveau {
+  transform: translateX(20px);
+}
+
+#sna {
+  transform: translate(90px, -10px);
+}
+
+#sommeil {
+  transform: translateY(-5px);
+}
+
+#vision {
+  transform: translateX(65px);
+}
+
+#neuropsy {
+}
+
+#peau {
+}
+
+#coeur {
+}
+
+#génétique {
+}
+
+#activité {
+}
+
+#muscles {
+}
+
+#marche {
+  transform:translate(-20px)
+}
+
+@media only screen and (max-width: 480px) {
+  button {
+    font-size: 12px !important;
+    padding: .25rem .5rem;
+  }
+
+  #silouette {
+    padding:0 0 0 0;
+  }
+
+  #cerveau {
+    transform: translateX(0px);
+  }
+
+  #sna {
+    transform: translate(35px);
+  }
+
+  #sommeil {
+    transform: translateY(-5px);
+  }
+
+  #vision {
+    transform: translateX(35px);
+  }
+
+  #neuropsy {
+  }
+
+  #peau {
+    transform:translate(-20px, 30px)
+  }
+
+  #coeur {
+    transform:translate(24px, 30px)
+  }
+
+  #génétique {
+    transform:translate(-20px,50px) 
+  }
+
+  #activité {
+    transform:translate(20px)
+  }
+
+  #muscles {
+  }
+
+  #marche {
+  }
+}

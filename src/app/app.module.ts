@@ -12,6 +12,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
 import { SearchComponent } from './search/search.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PersoEtudesComponent } from './perso-etudes/perso-etudes.component';
 
 
 const appRoutes: Routes = [
@@ -19,6 +20,7 @@ const appRoutes: Routes = [
   { path: 'Articles', component: ArticlesComponent },
   { path: '', component:AccueilComponent },
   { path: 'Etudes', component: EtudesComponent },
+  { path: 'Etudes/:studyId', component: EtudesComponent },
   { path: 'PageNotFound', component: PageNotFoundComponent },
   { path: '**', redirectTo: 'PageNotFound' }
 ]
@@ -34,6 +36,7 @@ const appRoutes: Routes = [
     ScrollToTopComponent,
     SearchComponent,
     PageNotFoundComponent,
+    PersoEtudesComponent,
     
   ],
   imports: [
