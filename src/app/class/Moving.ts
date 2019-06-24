@@ -14,6 +14,7 @@ export class Move {
     var newq = [nh, nw];
     document.getElementById(id).style.top = newq[0]
     document.getElementById(id).style.left = newq[1];
+
   }
 
   public startMoving() {

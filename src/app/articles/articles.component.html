@@ -12,7 +12,7 @@
   <!-- articles -->
   <div *ngFor="let sum of searcher.getSummaries().PubmedArticleSet.PubmedArticle" class="card shadow border-0 rounded mt-5 mb-5">
     <div class="cardbody mx-auto mr-2 ml-2">
-      <h3 *ngIf="sum.MedlineCitation.Article.ArticleTitle !== undefined || sum.MedlineCitation.Article.Journal.Title !== undefined" class="text-center card-title"><a href="{{'https://www.ncbi.nlm.nih.gov/pubmed/'+sum.PubmedData.ArticleIdList.ArticleId[0]._text}}" target="_blank">{{ sum.MedlineCitation.Article.ArticleTitle._text}} - {{ sum.MedlineCitation.Article.Journal.Title._text }}</a></h3>
+      <h3 *ngIf="sum.MedlineCitation.Article.ArticleTitle !== undefined || sum.MedlineCitation.Article.Journal.Title !== undefined" class="text-center card-title mx-auto col-11"><a href="{{'https://www.ncbi.nlm.nih.gov/pubmed/'+sum.PubmedData.ArticleIdList.ArticleId[0]._text}}" target="_blank">{{ sum.MedlineCitation.Article.ArticleTitle._text}} - {{ sum.MedlineCitation.Article.Journal.Title._text }}</a></h3>
 
       <ul class="row text-center" *ngIf="sum.MedlineCitation.Article.AuthorList.Author.__proto__ == '';else authsimple">
         <li *ngFor="let auth of sum.MedlineCitation.Article.AuthorList.Author" style="list-style-type: none;">
@@ -27,7 +27,7 @@
         </ul>
       </ng-template>
 
-      <p *ngIf="sum.MedlineCitation.Article.Abstract !== undefined" class="card-text mx-2 mb-2">
+      <p *ngIf="sum.MedlineCitation.Article.Abstract !== undefined" class="card-text mx-2 mb-2 col-10 mx-auto">
         {{sum.MedlineCitation.Article.Abstract.AbstractText._text}}<br />
       </p>
       <p class="text-right mr-4" *ngIf="sum.MedlineCitation.Article.Journal.JournalIssue.PubDate.Year !== undefined" style="text-decoration:underline;">

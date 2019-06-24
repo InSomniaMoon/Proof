@@ -60,10 +60,10 @@ export class EquipeComponent implements OnInit {
       "name": "MAUDOUX Delphine",
       "title": "Ingénieur"
     },
-  /*  {
-      "name": "MOLLIEX Serge",
-      "title": "PU - PH"
-    },*/
+    /*  {
+        "name": "MOLLIEX Serge",
+        "title": "PU - PH"
+      },*/
     {
       "name": "NOEL Kelig",
       "title": "Ingénieur"
@@ -113,6 +113,7 @@ export class EquipeComponent implements OnInit {
   constructor() { }
  
   ngOnInit() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
 }

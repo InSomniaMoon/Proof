@@ -1,3 +1,4 @@
+/*#region Services*/
 .service {
   background-image: url('../../assets/img/pattern.png');
   background-repeat: repeat-x repeat-y;
@@ -18,3 +19,126 @@
     margin-bottom: 70px;
     display: block;
   }
+
+.single-service-img {
+  width: 205px;
+  height: 125px;
+  background: #fff;
+  position: relative;
+  left: 50%;
+  margin-left: -100px;
+}
+
+  .single-service-img:before {
+    content: "";
+    position: absolute;
+    top: -42px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 102px solid transparent;
+    border-right: 104px solid transparent;
+    border-bottom: 42px solid #fff;
+  }
+
+  .single-service-img:after {
+    content: "";
+    position: absolute;
+    bottom: -42px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 102px solid transparent;
+    border-right: 102px solid transparent;
+    border-top: 42px solid #fff;
+    z-index: 10;
+  }
+
+.service-img {
+  width: 200px;
+  height: 123px;
+  background: #3a9ecb;
+  position: relative;
+  top: 1px;
+  left: 2px;
+}
+
+  .service-img:before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 40px solid #3a9ecb;
+  }
+
+  .service-img:after {
+    content: "";
+    position: absolute;
+    bottom: -39px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-top: 40px solid #3a9ecb;
+    z-index: 999;
+  }
+
+.single-service h3 {
+  margin-top: 60px;
+  color: #fff;
+}
+/*#endregion*/
+
+.service-img img.cerveau {
+  left: 26%;
+  top: 11%;
+}
+.service-img img.sna {
+  left: 20%;
+  top: 5%;
+}
+.service-img img.sommeil {
+  left: 20%;
+  
+}
+.service-img img.vision {
+  top:-10%;
+  left:12%;
+}
+.service-img img.neuropsy {
+
+  left: -3%;
+}
+.service-img img.peau {
+  left: 23%;
+  top: -10%;
+}
+.service-img img.coeur {
+  left: 20%;
+  top: 18%;
+}
+.service-img img.genetique {
+  left: 38%;
+}
+.service-img img.activite_physique {
+  left: 21%;
+}
+.service-img img.muscles {
+  left: 19%;
+}
+.service-img img.marche {
+  left:18%;
+}
+
+
+
+
+.service-img img {
+  position: absolute;
+}
+
