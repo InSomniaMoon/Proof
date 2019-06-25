@@ -14,6 +14,8 @@ import { SearchComponent } from './search/search.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PersoEtudesComponent } from './perso-etudes/perso-etudes.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoadingScreenComponent } from './loading-screen/loading-screen.component';
+import { LoadingPageService } from './services/loading-page.service';
 
 
 const appRoutes: Routes = [
@@ -38,7 +40,7 @@ const appRoutes: Routes = [
     SearchComponent,
     PageNotFoundComponent,
     PersoEtudesComponent,
-    
+    LoadingScreenComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,9 @@ const appRoutes: Routes = [
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    LoadingPageService
+],
   bootstrap: [AppComponent]
 
   

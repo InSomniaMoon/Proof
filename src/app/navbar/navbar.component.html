@@ -9,16 +9,16 @@
     <h4 class="mx-auto">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item" routerLinkActive="router-link-active">
-          <a class="nav-link ml-4 mr-4" (click)="closeMenu()" [routerLink]="['/']">Proof</a>
+          <a class="nav-link ml-4 mr-4" (click)="closeMenu()" [routerLink]="['/']" routerLinkActive="active-link">Proof</a>
         </li>
         <li class="nav-item" routerLinkActive="router-link-active">
-          <a class="nav-link ml-4 mr-4" (click)="closeMenu()" [routerLink]="['/Etudes']" i18n> Les Etudes</a>
+          <a class="nav-link ml-4 mr-4" (click)="closeMenu()" [routerLink]="['/Etudes']" routerLinkActive="active-link" i18n> Les Etudes</a>
         </li>
         <li class="nav-item" routerLinkActive="router-link-active">
-          <a class="nav-link ml-4 mr-4" (click)="closeMenu()" [routerLink]="['/Equipes']" i18n>Les Equipes</a>
+          <a class="nav-link ml-4 mr-4" (click)="closeMenu()" [routerLink]="['/Equipes']" routerLinkActive="active-link" i18n>Les Equipes</a>
         </li>
         <li class="nav-item" routerLinkActive="router-link-active">
-          <a class="nav-link ml-4 mr-4" (click)="closeMenu()" [routerLink]="['/Articles']" i18n>Les Articles</a>
+          <button class="nav-link ml-4 mr-4 btn border-0" style="font-size:24px!important; font-weight:500; margin-top:0px; padding-top:6px" (click)="makeArticles()" routerLinkActive="active-link" i18n>Les Articles</button>
         </li>
       </ul>
     </h4>

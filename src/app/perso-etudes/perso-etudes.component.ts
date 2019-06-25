@@ -23,7 +23,7 @@ export class PersoEtudesComponent implements OnInit, OnDestroy {
   constructor(private route: Router) {
   }
   ngOnInit() {
-    this.cerveau.startMoving();
+   /*this.cerveau.startMoving();
     this.sna.startMoving();
     this.sommeil.startMoving();
     this.vision.startMoving();
@@ -34,11 +34,11 @@ export class PersoEtudesComponent implements OnInit, OnDestroy {
     this.activité.startMoving();
     this.muscles.startMoving();
     this.marche.startMoving();
-    this.checkLoad();
+    this.checkLoad();*/
   }
 
   public ngOnDestroy() {
-    this.cerveau.stopMoving();
+   /* this.cerveau.stopMoving();
     this.sna.stopMoving();
     this.sommeil.stopMoving();
     this.vision.stopMoving();
@@ -48,28 +48,11 @@ export class PersoEtudesComponent implements OnInit, OnDestroy {
     this.génétique.stopMoving();
     this.activité.stopMoving();
     this.muscles.stopMoving();
-    this.marche.stopMoving();
+    this.marche.stopMoving();*/
   }
-
-  private checkLoad() {
-    if (this.cerveau === null) {
-      this.cerveau.stopMoving();
-      this.sna.stopMoving();
-      this.sommeil.stopMoving();
-      this.vision.stopMoving();
-      this.neuro.stopMoving();
-      this.peau.stopMoving();
-      this.coeur.stopMoving();
-      this.génétique.stopMoving();
-      this.activité.stopMoving();
-      this.muscles.stopMoving();
-      this.marche.stopMoving();
-    }
-  }
-
 
   public stop(id) {
-    this.cerveau.stopMoving();
+    /*this.cerveau.stopMoving();
     this.sna.stopMoving();
     this.sommeil.stopMoving();
     this.vision.stopMoving();
@@ -79,7 +62,7 @@ export class PersoEtudesComponent implements OnInit, OnDestroy {
     this.génétique.stopMoving();
     this.activité.stopMoving();
     this.muscles.stopMoving();
-    this.marche.stopMoving();
+    this.marche.stopMoving();*/
     this.route.navigate(['/Etudes/', id])
   }
 
