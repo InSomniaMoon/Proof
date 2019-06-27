@@ -1,5 +1,4 @@
-import { Component, OnInit, Inject, HostListener } from '@angular/core';
-import { DOCUMENT } from "@angular/platform-browser";
+import { Component, OnInit, Inject } from '@angular/core';
 
 @Component({
   selector: 'app-scroll-to-top',
@@ -9,7 +8,7 @@ import { DOCUMENT } from "@angular/platform-browser";
 export class ScrollToTopComponent implements OnInit {
 
    windowScrolled: boolean;
-    constructor(@Inject(DOCUMENT) private document: Document) {}
+    constructor() {}
     scrollToTop() {
         (function smoothscroll() {
             var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;

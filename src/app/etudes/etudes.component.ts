@@ -89,7 +89,6 @@ export class EtudesComponent implements OnInit {
         break;
 
       default:
-        console.log('default');
         window.scrollTo({top: 0, behavior: 'smooth'});
         break;
     }
