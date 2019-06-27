@@ -31,58 +31,58 @@ export class EtudesComponent implements OnInit {
   public opensec(section) {
     switch (section) {
 
-      case 'cerveau':
+      case 'Cerveau':
         this.openDom('collapseCerveau');
         document.getElementById('cerveau').scrollIntoView({ behavior: "smooth", inline: "start" })
         break;
 
-      case 'sna':
+      case 'SNA':
         this.openDom('collapseSNA');
         console.log('ok');
         document.getElementById('sna').scrollIntoView({ behavior: "smooth", inline: "start" })
         break;
 
-      case 'sommeil':
+      case 'Sommeil':
         this.openDom('collapseSommeil');
         document.getElementById('sommeil').scrollIntoView({ behavior: "smooth", inline: "start" })
         break;
 
-      case 'vision':
+      case 'Vision':
         this.openDom('collapseVision');
         document.getElementById('vision').scrollIntoView({ behavior: "smooth", inline: "start" })
         break;
 
-      case 'neuropsy':
+      case 'Neuro_Psychologie':
         this.openDom('collapseNeuropsy');
         document.getElementById('neuropsy').scrollIntoView({ behavior: "smooth", inline: "start" })
         break;
 
-      case 'peau':
+      case 'Peau':
         this.openDom('collapsePeau');
         document.getElementById('peau').scrollIntoView({ behavior: "smooth", inline: "start" })
         break;
 
-      case 'coeur':
+      case 'Coeur':
         this.openDom('collapseCoeur');
         document.getElementById('coeur').scrollIntoView({ behavior: "smooth", inline: "start" })
         break;
 
-      case 'génétique':
+      case 'Génétique':
         this.openDom('collapseGénétique');
         document.getElementById('génétique').scrollIntoView({ behavior: "smooth", inline: "start" })
         break;
 
-      case 'activite_physique':
+      case 'Activite_Physique':
         this.openDom('collapseActivite_physique');
         document.getElementById('activite_physique').scrollIntoView({ behavior: "smooth", inline: "start" })
         break;
 
-      case 'muscles':
+      case 'Muscles':
         this.openDom('collapseMuscles');
         document.getElementById('muscles').scrollIntoView({ behavior: "smooth", inline: "start" })
         break;
 
-      case 'marche':
+      case 'Marche':
         this.openDom('collapseMarche');
         document.getElementById('marche').scrollIntoView({ behavior: "smooth", inline: "start" });
         console.log('marche');

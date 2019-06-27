@@ -1,6 +1,4 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { ArticlesComponent } from '../articles/articles.component';
-import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-search',

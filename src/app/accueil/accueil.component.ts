@@ -14,5 +14,4 @@ export class AccueilComponent implements OnInit {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
   }
-
 }

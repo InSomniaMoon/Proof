@@ -20,14 +20,16 @@ export class SearchArticles {
   }
 
   //#region gets
-  public getSummaryURL(idlist: string): string { return this.baseURL + "efetch.fcgi?db=" + this.db + "&id=" + idlist + "&rettype=xml"; }
-
   public getSearchUrl(term: string): string {
+    term = term.replace(' ', '+AND+');
+    term = term.replace('-', '%2D');
     return this.baseURL + "esearch.fcgi?db=" + this.db
-      + "&term=(PROOF%20AND%20(STUDY%20OR%20COHORT)%20AND%20(Roche%20F%20OR%20Barthélémy))%20OR%20SNA-EPIS+" //termes de base à chercher
+      + "&term=(PROOF%20AND%20(STUDY%20OR%20COHORT)%20AND%20(Roche%20F%20OR%20Barthélémy))%20OR%20SNA-EPIS+AND%20" //termes de base à chercher
       + term
-      + "&RetMax=150"; //nombre d'ids d'artiles maximum à récupérer 
+      + "&RetMax=150"; //nombre d'ids d'artiles maximum à récupérer
   }
+
+  public getSummaryURL(idlist: string): string { return this.baseURL + "efetch.fcgi?db=" + this.db + "&id=" + idlist + "&rettype=xml"; }
 
   public getIdList(term: string): string {
     var XMLDoc = this.docParser.parseFromString(this.getXMLDocFromURL(this.getSearchUrl(term)), "application/xml");

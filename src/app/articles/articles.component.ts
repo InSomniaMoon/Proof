@@ -1,4 +1,4 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { SearchArticles } from '../class/SearchArticles';
 import { LoadingPageService } from '../services/loading-page.service';
 @Component({
