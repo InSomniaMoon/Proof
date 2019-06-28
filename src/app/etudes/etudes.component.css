@@ -135,7 +135,18 @@
   left:18%;
 }
 
-
+.btn:hover .service-img {
+  background-color: rgba(58,158,203,0.6);
+  transition: 1s;
+}
+  .btn:hover .service-img:before {
+    border-bottom-color: rgba(58,158,203,0.6);
+    transition: 1s;
+  }
+  .btn:hover .service-img:after {
+    border-top-color: rgba(58,158,203,0.6);
+    transition: 1s;
+  }
 
 
 .service-img img {

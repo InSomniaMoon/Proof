@@ -38,3 +38,9 @@
     background-color: #007bff;
     border-color: #007bff;
   }
+
+p {
+  font-size: 18px;
+  text-align: justify;
+  text-justify: inter-word;
+}
