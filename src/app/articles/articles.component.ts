@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
-import { SearchArticles } from '../class/SearchArticles';
 import { LoadingPageService } from '../services/loading-page.service';
+import { ArticlesService } from '../services/articles.service';
+
 @Component({
   selector: 'app-articles',
   templateUrl: './articles.component.html',
@@ -8,15 +9,24 @@ import { LoadingPageService } from '../services/loading-page.service';
 
 })
 export class ArticlesComponent implements OnInit {
-  public searcher;
-
-  constructor(private loader: LoadingPageService) {
+  public pageActual: number = 1;
+  
+  constructor(private loader: LoadingPageService, private articlesService: ArticlesService) {
   }
 
   ngOnInit() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    this.searcher = new SearchArticles();
     this.loader.hideLoader();
+  }
 
-  }  
+  public  getArticles() {
+    return this.articlesService.searcher.getSummaries();
+  }
+
+  public getArticleNumber() {
+    return this.articlesService.searcher.getArticleNumber()
+  }
+  public log(some) {
+    console.log(some);
+  }
 }

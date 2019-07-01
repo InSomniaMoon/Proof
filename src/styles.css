@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 .blue {
-    background: rgba(58,158,203,0.9)!important;
+ /*background: rgba(58,158,203,0.9) !important;*/
+  background: #26B6B4 !important;
 }
 
 .btn-blue {
@@ -21,7 +22,7 @@
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   color: white;
-  background-color: #3A9ECB;
+  background-color: #26B6B4;
   border-color: #212529;
 }
   .btn-blue:hover {
@@ -30,7 +31,7 @@
     border-color: #545b62;
   }
   .btn-blue:focus, .btn-blue.focus {
-    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+    box-shadow: 0 0 0 0.2rem rgba(38, 182, 180, 0.5);
   }
 
   .btn-blue.disabled, .btn-blue:disabled {

@@ -16,6 +16,9 @@ import { PersoEtudesComponent } from './perso-etudes/perso-etudes.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoadingScreenComponent } from './loading-screen/loading-screen.component';
 import { LoadingPageService } from './services/loading-page.service';
+import { ArticlesService } from './services/articles.service';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { SearchArticles } from './class/SearchArticles';
 
 
 const appRoutes: Routes = [
@@ -46,13 +49,14 @@ const appRoutes: Routes = [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [
-    LoadingPageService
+    LoadingPageService,
+    ArticlesService,
+    SearchArticles
 ],
   bootstrap: [AppComponent]
-
-  
 })
 export class AppModule { }

@@ -14,9 +14,14 @@ button {
   font-size: 18px;
   color: black;
   transition: 2s;
-  background-color: rgba(58,158,203,0.2);
-  /*rgba(58,158,203,0.9)*/
+  background-color: rgba(38,182,180,0.2);
+  /*background-color: rgba(58,158,203,0.2);*/
 }
+
+  button:hover {
+    background-color: rgba(31, 144, 142, 0.60);
+    transition:.5s;
+  }
 
 #cerveau {
   transform: translateX(20px);

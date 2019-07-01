@@ -11,15 +11,45 @@ export class SearchArticles {
   constructor() {
     this.baseURL = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/";
     this.db = "PubMed";
-    this.convertXmlJson(this.getXMLDocFromURL(this.getSummaryURL(this.getIdList(''))));
   }
 
-  public convertXmlJson(xml: any) {
-    var json = xml2js(xml, { compact: true });
-    this.summaries = json;
-  }
+
 
   //#region gets
+  //retourne summaries
+  public getSummaries(): any {
+    return this.summaries;
+  }
+
+  //retourne le nombre d'articles contenu dans la recherche
+  public getArticleNumber(): number {
+    return this.ArticleNumber;
+  }
+
+  getXMLDocFromURL(unURL: string) {
+    this.req.open('GET', unURL, false);
+    this.req.send(null);
+    return this.req.responseText;
+  }
+  //#endregion
+
+
+
+  //#region sets
+  public setSummaries(aSum) {
+    this.summaries = aSum;
+  }
+  //#endregion
+
+
+  //#region Methods
+  public convertXmlJson(xml: any) {
+    var json = xml2js(xml, { compact: true });
+    return json;
+  }
+
+
+  //crée l'url pour chercher les articles contenant les termes en entrée
   public getSearchUrl(term: string): string {
     term = term.replace(' ', '+AND+');
     term = term.replace('-', '%2D');
@@ -29,8 +59,7 @@ export class SearchArticles {
       + "&RetMax=150"; //nombre d'ids d'artiles maximum à récupérer
   }
 
-  public getSummaryURL(idlist: string): string { return this.baseURL + "efetch.fcgi?db=" + this.db + "&id=" + idlist + "&rettype=xml"; }
-
+  //retourne la liste des ids d'articles correspondant aux termes en entrée
   public getIdList(term: string): string {
     var XMLDoc = this.docParser.parseFromString(this.getXMLDocFromURL(this.getSearchUrl(term)), "application/xml");
     var IdList = "";
@@ -45,23 +74,9 @@ export class SearchArticles {
     return IdList;
   }
 
-  public getSummaries(): any {
-    return this.summaries;
-  }
-  public getArticlesNumber() { return this.ArticleNumber }
-  //#endregion
+  //retourne l'url contenant les données de chaque article
+  public getSummaryURL(idlist: string): string { return this.baseURL + "efetch.fcgi?db=" + this.db + "&id=" + idlist + "&rettype=xml"; }
 
-  //#region sets
-  getXMLDocFromURL(unURL: string) {
-    this.req.open('GET', unURL, false);
-    this.req.send(null);
-    return this.req.responseText;
-  }
-
-  public setSummaries(aSum) {
-    this.summaries = aSum;
-  }
 
   //#endregion
-
 }

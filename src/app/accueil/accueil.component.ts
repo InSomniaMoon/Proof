@@ -12,6 +12,6 @@ export class AccueilComponent implements OnInit {
   ngOnInit() {
     ($('[data-toggle="tooltip"]') as any).tooltip();
     window.scrollTo({ top: 0, behavior: 'smooth' });
-
   }
+
 }

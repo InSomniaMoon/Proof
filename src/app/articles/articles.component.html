@@ -1,39 +1,37 @@
+  <div class="col-lg-9 mx-auto">
 
+    <!-- #region Recherche d'éléments -->
+    <app-search></app-search>
+    <div class="alert alert-light text-center" role="alert" i18n>
+      Nombre d'articles trouvés : {{ getArticleNumber() }}
+    </div>
+    <!-- #endregion Recherche d'éléments -->
+    <br />
+    <!-- articles -->
 
-<div class="col-lg-9 mx-auto">
+    <div *ngFor="let sum of getArticles().PubmedArticleSet.PubmedArticle | paginate: {id:'forarticles', itemsPerPage: 20, currentPage: pageActual }" class="card shadow border-0 rounded mt-5 mb-5">
+      <div class="cardbody mx-auto mr-2 ml-2">
+        <h3 *ngIf="sum.MedlineCitation.Article.ArticleTitle !== undefined || sum.MedlineCitation.Article.Journal.Title !== undefined" class="text-center card-title mx-auto col-11"><a href="{{'https://www.ncbi.nlm.nih.gov/pubmed/'+sum.PubmedData.ArticleIdList.ArticleId[0]._text}}" target="_blank">{{ sum.MedlineCitation.Article.ArticleTitle._text}} - {{ sum.MedlineCitation.Article.Journal.Title._text }}</a></h3>
 
-  <!-- Recherche d'éléments -->
-  <app-search  (searchTerm)="searcher.convertXmlJson(searcher.getXMLDocFromURL(searcher.getSummaryURL(searcher.getIdList($event))))"></app-search>
-  <div class="alert alert-light text-center" role="alert" i18n>
-    Nombre d'articles trouvés : {{ searcher.getArticlesNumber() }}
-  </div>
-  <!-- /Recherche d'éléments -->
-  <br />
-  <!-- articles -->
-  <div *ngFor="let sum of searcher.getSummaries().PubmedArticleSet.PubmedArticle" class="card shadow border-0 rounded mt-5 mb-5">
-    <div class="cardbody mx-auto mr-2 ml-2">
-      <h3 *ngIf="sum.MedlineCitation.Article.ArticleTitle !== undefined || sum.MedlineCitation.Article.Journal.Title !== undefined" class="text-center card-title mx-auto col-11"><a href="{{'https://www.ncbi.nlm.nih.gov/pubmed/'+sum.PubmedData.ArticleIdList.ArticleId[0]._text}}" target="_blank">{{ sum.MedlineCitation.Article.ArticleTitle._text}} - {{ sum.MedlineCitation.Article.Journal.Title._text }}</a></h3>
-
-      <ul class="row text-center" *ngIf="sum.MedlineCitation.Article.AuthorList.Author.__proto__ == '';else authsimple">
-        <li *ngFor="let auth of sum.MedlineCitation.Article.AuthorList.Author" style="list-style-type: none;">
-          <h5 id="auth" *ngIf="auth.LastName !== undefined" class="card-subtitle mr-3">{{auth.Initials._text }}.{{ auth.LastName._text}}</h5>
-        </li>
-      </ul>
-      <ng-template #authsimple>
+        <ul class="row text-center" *ngIf="sum.MedlineCitation.Article.AuthorList.Author.__proto__ == '';else authsimple">
+          <li *ngFor="let auth of sum.MedlineCitation.Article.AuthorList.Author" style="list-style-type: none;">
+            <h5 id="auth" *ngIf="auth.LastName !== undefined" class="card-subtitle mr-3">{{auth.Initials._text }}.{{ auth.LastName._text}}</h5>
+          </li>
+        </ul>
         <ul class="row text-center">
           <li *ngIf="sum.MedlineCitation.Article.AuthorList.Author.LastName !== undefined" style="list-style-type: none;">
             <h5 id="auth" class="card-subtitle">{{sum.MedlineCitation.Article.AuthorList.Author.Initials._text}}. & {{sum.MedlineCitation.Article.AuthorList.Author.LastName._text}}</h5>
           </li>
         </ul>
-      </ng-template>
 
-      <p *ngIf="sum.MedlineCitation.Article.Abstract !== undefined" class="card-text mx-2 mb-2 col-10 mx-auto">
-        {{sum.MedlineCitation.Article.Abstract.AbstractText._text}}<br />
-      </p>
-      <p class="text-right mr-4" *ngIf="sum.MedlineCitation.Article.Journal.JournalIssue.PubDate.Year !== undefined" style="text-decoration:underline;">
-        <span *ngIf="sum.MedlineCitation.Article.Journal.JournalIssue.PubDate.Month !== undefined">{{sum.MedlineCitation.Article.Journal.JournalIssue.PubDate.Month._text}}<span *ngIf="sum.MedlineCitation.Article.Journal.JournalIssue.PubDate.Day !== undefined"> - {{sum.MedlineCitation.Article.Journal.JournalIssue.PubDate.Day._text}}</span>, </span>{{sum.MedlineCitation.Article.Journal.JournalIssue.PubDate.Year._text}}
-      </p>
-    </div>
+        <p *ngIf="sum.MedlineCitation.Article.Abstract !== undefined" class="card-text mx-2 mb-2 col-10 mx-auto">
+          {{sum.MedlineCitation.Article.Abstract.AbstractText._text}}<br />
+        </p>
+        <p class="text-right mr-4" *ngIf="sum.MedlineCitation.Article.Journal.JournalIssue.PubDate.Year !== undefined" style="text-decoration:underline;">
+          <span *ngIf="sum.MedlineCitation.Article.Journal.JournalIssue.PubDate.Month !== undefined">{{sum.MedlineCitation.Article.Journal.JournalIssue.PubDate.Month._text}}<span *ngIf="sum.MedlineCitation.Article.Journal.JournalIssue.PubDate.Day !== undefined"> - {{sum.MedlineCitation.Article.Journal.JournalIssue.PubDate.Day._text}}</span>, </span>{{sum.MedlineCitation.Article.Journal.JournalIssue.PubDate.Year._text}}
+        </p>
+      </div>
+    </div>  
+    <br>
+    <pagination-controls id="forarticles" responsive="true" (pageChange)="pageActual = $event" ></pagination-controls>
   </div>
-  <br>
-</div>
