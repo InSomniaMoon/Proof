@@ -4,6 +4,10 @@
   background: #26B6B4 !important;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 .btn-blue {
   transition: none;
   display: inline-block;

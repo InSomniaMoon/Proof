@@ -1,4 +1,4 @@
-import { Component, AfterViewChecked, AfterContentInit } from '@angular/core';
+import { Component, AfterContentInit} from '@angular/core';
 import { ArticlesService } from './services/articles.service';
 @Component({
   selector: 'app-root',
@@ -6,13 +6,14 @@ import { ArticlesService } from './services/articles.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements AfterContentInit {
-  title = 'ProofAlpha';
+  title = 'Proof';
   
   constructor(private articlesService: ArticlesService) { }
 
   private sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
+
 
   public async ngAfterContentInit() {
     await this.sleep(1)

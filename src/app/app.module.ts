@@ -19,6 +19,7 @@ import { LoadingPageService } from './services/loading-page.service';
 import { ArticlesService } from './services/articles.service';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SearchArticles } from './class/SearchArticles';
+import { SynapseComponent } from './synapse/synapse.component';
 
 
 const appRoutes: Routes = [
@@ -28,6 +29,7 @@ const appRoutes: Routes = [
   { path: 'Etudes', component: EtudesComponent },
   { path: 'Etudes/:studyId', component: EtudesComponent },
   { path: 'PageNotFound', component: PageNotFoundComponent },
+  { path: 'Synapse', component: SynapseComponent },
   { path: '**', redirectTo: 'PageNotFound' }
 ]
 @NgModule({
@@ -43,7 +45,8 @@ const appRoutes: Routes = [
     SearchComponent,
     PageNotFoundComponent,
     PersoEtudesComponent,
-    LoadingScreenComponent
+    LoadingScreenComponent,
+    SynapseComponent
   ],
   imports: [
     BrowserModule,

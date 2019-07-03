@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { EquipesService } from '../services/equipes.service';
 
 @Component({
   selector: 'app-etudes',
@@ -9,13 +10,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class EtudesComponent implements OnInit {
   private param;
-  constructor(private route: ActivatedRoute, private http: HttpClient) {
+  public member = this.equipeService.getEquipe();
+  constructor(private route: ActivatedRoute, private http: HttpClient,private equipeService:EquipesService) {
   }
 
   ngOnInit() {
     this.param = this.route.snapshot.params['studyId'];
     this.opensec(this.param);
-
+    ($('[data-toggle="tooltip"]') as any).tooltip();
   }
   /*
    * Ouvre un élément de l'arccordéon

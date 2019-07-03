@@ -13,5 +13,4 @@ export class AccueilComponent implements OnInit {
     ($('[data-toggle="tooltip"]') as any).tooltip();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-
 }

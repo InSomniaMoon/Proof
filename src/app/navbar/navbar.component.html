@@ -1,29 +1,29 @@
-<div class="navbar animated navbar-expand-lg navbar-light fixed-top mx-auto blue" id=top>
-  <!--105,173,227,0.9-->
-  <img src="assets/img/logo.png" width="50px" alt="Logo?" class="navbar-brand" />
-  <button class="navbar-toggler" id="btntoggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  
-  <div class="collapse navbar-collapse mx-auto" id="navbarSupportedContent">
-    <h4 class="mx-auto">
-      <ul class="navbar-nav mx-auto">
-        <li class="nav-item" routerLinkActive="router-link-active">
-          <a class="nav-link ml-4 mr-4" (click)="closeMenu()" [routerLink]="['/']" routerLinkActive="active-link">Proof</a>
-        </li>
-        <li class="nav-item" routerLinkActive="router-link-active">
-          <a class="nav-link ml-4 mr-4" (click)="closeMenu()" [routerLink]="['/Etudes']" routerLinkActive="active-link" i18n> Les Etudes</a>
-        </li>
-        <li class="nav-item" routerLinkActive="router-link-active">
-          <a class="nav-link ml-4 mr-4" (click)="closeMenu()" [routerLink]="['/Equipes']" routerLinkActive="active-link" i18n>Les Equipes</a>
-        </li>
-        <li class="nav-item" routerLinkActive="router-link-active">
-          <button class="nav-link ml-4 mr-4 btn border-0" style="font-size:24px!important; font-weight:500; margin-top:0px; padding-top:6px" (click)="makeArticles()" routerLinkActive="active-link" i18n>Les Articles</button>
-        </li>
-      </ul>
-    </h4>
-    <button type="button" class="btn nav-item" onclick="window.open('http://synapse-recherche42.org')">
-      <h4 class="nav-link text-dark" i18n>L'association Synapse</h4>
+  <div class="navbar animated navbar-expand-lg navbar-light fixed-top mx-auto blue" id=top>
+    <img src="assets/img/logo.png" width="65" alt="Logo?" sty class="navbar-brand" />
+    <!--105,173,227,0.9-->
+    <button class="navbar-toggler" id="btntoggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
-  </div>
-</div>
+
+    <div class="collapse navbar-collapse mx-auto" id="navbarSupportedContent">
+      <h4 class="mx-auto">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item" routerLinkActive="router-link-active">
+            <a class="nav-link ml-4 mr-4" (click)="closeMenu()" [routerLink]="['/']" routerLinkActive="active-link">Proof</a>
+          </li>
+          <li class="nav-item" routerLinkActive="router-link-active">
+            <a class="nav-link ml-4 mr-4" (click)="closeMenu()" [routerLink]="['/Etudes']" routerLinkActive="active-link" i18n>Etudes</a>
+          </li>
+          <li class="nav-item" routerLinkActive="router-link-active">
+            <a class="nav-link ml-4 mr-4" (click)="closeMenu()" [routerLink]="['/Equipes']" routerLinkActive="active-link" i18n>Equipe</a>
+          </li>
+          <li class="nav-item" routerLinkActive="router-link-active">
+            <button class="nav-link ml-4 mr-4 btn border-0" style="font-size:24px!important; font-weight:500; margin-top:0px; padding-top:6px" (click)="makeArticles()" routerLinkActive="active-link" i18n>Articles</button>
+          </li>
+        </ul>
+      </h4>
+      <h4 class="nav-item" routerLinkActive="router-link-active">
+        <a class="nav-link text-dark" (click)="closeMenu()" [routerLink]="['/Synapse']" i18n>Association Synapse</a>
+      </h4>
+    </div>
+  </div><br />
