@@ -17,11 +17,13 @@ export class EtudesComponent implements OnInit {
   ngOnInit() {
     this.param = this.route.snapshot.params['studyId'];
     this.opensec(this.param);
+    //initialise les bulles explicatives
     ($('[data-toggle="tooltip"]') as any).tooltip();
   }
+
   /*
    * Ouvre un élément de l'arccordéon
-   * utilisé dans openSec/tion/
+   * utilisé dans opensec
    */
   public openDom(dom) {
   document.getElementById(dom).classList.add('show');

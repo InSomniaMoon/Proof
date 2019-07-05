@@ -12,9 +12,7 @@ export class SearchArticles {
     this.baseURL = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/";
     this.db = "PubMed";
   }
-
-
-
+   
   //#region gets
   //retourne summaries
   public getSummaries(): any {
@@ -33,8 +31,7 @@ export class SearchArticles {
   }
   //#endregion
 
-
-
+  
   //#region sets
   public setSummaries(aSum) {
     this.summaries = aSum;
@@ -43,19 +40,19 @@ export class SearchArticles {
 
 
   //#region Methods
+  //convertie un fichier xml en json
   public convertXmlJson(xml: any) {
     var json = xml2js(xml, { compact: true });
     return json;
   }
 
-
   //crée l'url pour chercher les articles contenant les termes en entrée
   public getSearchUrl(term: string): string {
-    term = term.replace(' ', '+AND+');
-    term = term.replace('-', '%2D');
-    return this.baseURL + "esearch.fcgi?db=" + this.db
+    term = term.replace(' ', '+AND+'); //permet d'enlever les espaces
+    term = term.replace('-', '%2D'); //permet d'éviter un bug
+    return this.baseURL + "esearch.fcgi?db=" + this.db //db pubmed
       + "&term=(PROOF%20AND%20(STUDY%20OR%20COHORT)%20AND%20(Roche%20F%20OR%20Barthélémy))%20OR%20SNA-EPIS+AND%20" //termes de base à chercher
-      + term
+      + term  //termes entrés par l'utilisateur
       + "&RetMax=150"; //nombre d'ids d'artiles maximum à récupérer
   }
 

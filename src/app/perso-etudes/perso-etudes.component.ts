@@ -23,46 +23,12 @@ export class PersoEtudesComponent implements OnInit, OnDestroy {
   constructor(private route: Router) {
   }
   ngOnInit() {
-   /*this.cerveau.startMoving();
-    this.sna.startMoving();
-    this.sommeil.startMoving();
-    this.vision.startMoving();
-    this.neuro.startMoving();
-    this.peau.startMoving();
-    this.coeur.startMoving();
-    this.génétique.startMoving();
-    this.activité.startMoving();
-    this.muscles.startMoving();
-    this.marche.startMoving();
-    this.checkLoad();*/
   }
 
   public ngOnDestroy() {
-   /* this.cerveau.stopMoving();
-    this.sna.stopMoving();
-    this.sommeil.stopMoving();
-    this.vision.stopMoving();
-    this.neuro.stopMoving();
-    this.peau.stopMoving();
-    this.coeur.stopMoving();
-    this.génétique.stopMoving();
-    this.activité.stopMoving();
-    this.muscles.stopMoving();
-    this.marche.stopMoving();*/
   }
 
-  public stop(id) {
-    /*this.cerveau.stopMoving();
-    this.sna.stopMoving();
-    this.sommeil.stopMoving();
-    this.vision.stopMoving();
-    this.neuro.stopMoving();
-    this.peau.stopMoving();
-    this.coeur.stopMoving();
-    this.génétique.stopMoving();
-    this.activité.stopMoving();
-    this.muscles.stopMoving();
-    this.marche.stopMoving();*/
+  public goTo(id) {
     this.route.navigate(['/Etudes/', id])
   }
 

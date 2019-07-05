@@ -1,3 +1,9 @@
+/*
+ * 
+ * permet de faire bouger aléatoirement des boutons ou balise en toute sorte.
+ * 
+ */
+
 export class Move {
   public idInterval;
   private id;

@@ -5,38 +5,38 @@
 <div id="silouette" class="mx-auto col-12 col-md-11 col-lg-7 col-xl-5 mt-5 justy-content-center">
   <div style="transform:translateY(-50px)" class="mx-auto">
     <div class="mx-auto row">
-      <button class="btn alert-neuro mx-auto" id="cerveau" (click)="stop('Cerveau')">Cerveau</button>
+      <button class="btn alert-neuro mx-auto" id="cerveau" (click)="goTo('Cerveau')">Cerveau</button>
     </div>
 
 
     <div class="row mx-auto">
-      <div class="mx-auto"><button class="btn alert-neuro" id="sna" (click)="stop('SNA')">SNA</button></div>
-      <div class="mx-auto"><button class="btn alert-neuro" id="sommeil" (click)="stop('Sommeil')">Sommeil</button></div>
+      <div class="mx-auto"><button class="btn alert-neuro" id="sna" (click)="goTo('SNA')">SNA</button></div>
+      <div class="mx-auto"><button class="btn alert-neuro" id="sommeil" (click)="goTo('Sommeil')">Sommeil</button></div>
     </div>
 
 
     <div class="row mx-auto">
-      <div class="mx-auto"><button class="btn alert-neuro" id="vision" (click)="stop('Vision')">Vision</button></div>
-      <div class="mx-auto"><button class="btn alert-neuro mx-auto ml-3" id="neuropsy" (click)="stop('Neuro_Psychologie')">Neuro<br />Psychologie</button></div>
+      <div class="mx-auto"><button class="btn alert-neuro" id="vision" (click)="goTo('Vision')">Vision</button></div>
+      <div class="mx-auto"><button class="btn alert-neuro mx-auto ml-3" id="neuropsy" (click)="goTo('Neuro_Psychologie')">Neuro<br />Psychologie</button></div>
     </div>
 
     <div class="row mx-auto">
-      <div class="mx-auto"><button class="btn alert-neuro mx-auto" id="peau" (click)="stop('Peau')">Peau</button></div>
-      <div class="mx-auto"><button class="btn alert-neuro mx-auto" id="coeur" (click)="stop('Coeur')">Coeur et<br />vaisseaux</button></div>
+      <div class="mx-auto"><button class="btn alert-neuro mx-auto" id="peau" (click)="goTo('Peau')">Peau</button></div>
+      <div class="mx-auto"><button class="btn alert-neuro mx-auto" id="coeur" (click)="goTo('Coeur')">Coeur et<br />vaisseaux</button></div>
     </div>
   </div>
 
   <div class="row mx-auto col-9" >
-    <div><button class="btn alert-neuro mx-auto" id="génétique" (click)="stop('Génétique')">Génétique</button></div>
+    <div><button class="btn alert-neuro mx-auto" id="génétique" (click)="goTo('Génétique')">Génétique</button></div>
   </div>
 
   <div style="transform:translateY(60px)">
     <div class="d-flex justify-content-end col-8 mx-auto">
-      <div><button class="btn alert-neuro mx-auto" id="activite_physique" (click)="stop('Activite_Physique')">Activité <br />physique</button></div>
+      <div><button class="btn alert-neuro mx-auto" id="activite_physique" (click)="goTo('Activite_Physique')">Activité <br />physique</button></div>
     </div>
 
     <div class="d-flex justify-content-end col-8 mx-auto" style="transform:translateY(60px)">
-      <button class="btn alert-neuro" id="muscles" (click)="stop('Muscles')">Muscles</button>
+      <button class="btn alert-neuro" id="muscles" (click)="goTo('Muscles')">Muscles</button>
     </div>
   </div>
 
@@ -47,7 +47,7 @@
   <br />
   <br />
   <div class="row mx-auto col-7">
-    <button class="btn alert-neuro" id="marche" (click)="stop('Marche')">Marche</button>
+    <button class="btn alert-neuro" id="marche" (click)="goTo('Marche')">Marche</button>
   </div>
 
 </div>

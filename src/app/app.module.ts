@@ -1,11 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { NgxPaginationModule } from 'ngx-pagination';
+
+import { EquipeComponent } from './equipe/equipe.component';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ArticlesComponent } from './articles/articles.component';
-import { EquipeComponent } from './equipe/equipe.component';
-import { Routes, RouterModule } from '@angular/router';
 import { AccueilComponent } from './accueil/accueil.component';
 import { EtudesComponent } from './etudes/etudes.component';
 import { FooterComponent } from './footer/footer.component';
@@ -13,17 +16,15 @@ import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
 import { SearchComponent } from './search/search.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PersoEtudesComponent } from './perso-etudes/perso-etudes.component';
-import { HttpClientModule } from '@angular/common/http';
 import { LoadingScreenComponent } from './loading-screen/loading-screen.component';
+import { SynapseComponent } from './synapse/synapse.component';
 import { LoadingPageService } from './services/loading-page.service';
 import { ArticlesService } from './services/articles.service';
-import { NgxPaginationModule } from 'ngx-pagination';
 import { SearchArticles } from './class/SearchArticles';
-import { SynapseComponent } from './synapse/synapse.component';
 
 
 const appRoutes: Routes = [
-  { path: 'Equipes', component:EquipeComponent },
+  { path: 'Equipe', component:EquipeComponent },
   { path: 'Articles', component: ArticlesComponent },
   { path: '', component:AccueilComponent },
   { path: 'Etudes', component: EtudesComponent },

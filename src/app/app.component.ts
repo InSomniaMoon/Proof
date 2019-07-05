@@ -14,7 +14,7 @@ export class AppComponent implements AfterContentInit {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
-
+  //initialise les articles en parallèle du lancement de l'appli
   public async ngAfterContentInit() {
     await this.sleep(1)
     this.articlesService.load()

@@ -12,17 +12,21 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
   }
+  //ferme le menu au clic
   public closeMenu() {
     document.getElementById('navbarSupportedContent').classList.remove('show');
   }
+
+  //sleeper
   private sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
+  //lance le loading screen au chargement des articles
   public async makeArticles() {
     this.loader.showLoader();
     this.closeMenu();
-    await this.sleep(30);
+    await this.sleep(1);
     this.route.navigate(['/Articles']);
 
   }
