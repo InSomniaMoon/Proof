@@ -8,14 +8,14 @@
   <!--cerveau complété-->
   <div>
     <div id="cerveau">
-      <button class="btn btn-link collapsed text-center mx-auto col-12 mt-5 text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseCerveau" aria-expanded="false" aria-controls="collapseCerveau">
+      <button (click)="scrollTo('cerveau')" class="btn btn-link collapsed text-center mx-auto col-12 mt-5 text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseCerveau" aria-expanded="false" aria-controls="collapseCerveau">
         <div class="col-md-3 col-sm-6 single-service mx-auto">
           <div class="single-service-img">
             <div class="service-img">
               <img class="cerveau img-responsive" src="assets/img/etudes/cerveau.png" alt="image Heart w/ ECG">
             </div>
           </div>
-          <h3 i18n>Cerveau</h3>
+          <h3 id="title-cerveau" i18n>Cerveau</h3>
         </div>
       </button>
     </div>
@@ -56,7 +56,7 @@
   <!--sna-->
   <div>
     <div id="sna">
-      <button class="btn btn-link collapsed text-center mx-auto col-12 mt-5 text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseSNA" aria-expanded="false" aria-controls="collapseSNA">
+      <button (click)="scrollTo('sna')" class="btn btn-link collapsed text-center mx-auto col-12 mt-5 text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseSNA" aria-expanded="false" aria-controls="collapseSNA">
         <div class="col-md-3 col-sm-6 mx-auto">
           <div class="single-service">
             <div class="single-service-img">
@@ -79,7 +79,7 @@
   <!--sommeil complété-->
   <div>
     <div id="sommeil">
-      <button class="btn btn-link collapsed text-center mx-auto col-12 mt-5 text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseSommeil" aria-expanded="false" aria-controls="collapseSommeil">
+      <button (click)="scrollTo('sommeil')" class="btn btn-link collapsed text-center mx-auto col-12 mt-5 text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseSommeil" aria-expanded="false" aria-controls="collapseSommeil">
         <div class="col-md-3 col-sm-6  mx-auto">
           <div class="single-service">
             <div class="single-service-img">
@@ -119,7 +119,7 @@
   <!--vision-->
   <div>
     <div id="vision">
-      <button class="btn btn-link collapsed text-center mx-auto col-12 mt-5 text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseVision" aria-expanded="false" aria-controls="collapseVision">
+      <button (click)="scrollTo('vision')" class="btn btn-link collapsed text-center mx-auto col-12 mt-5 text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseVision" aria-expanded="false" aria-controls="collapseVision">
         <div class="col-md-3 col-sm-6 text-center mx-auto">
           <div class="single-service">
             <div class="single-service-img">
@@ -148,7 +148,7 @@
   <!--neuropsy complété-->
   <div>
     <div id="neuropsy">
-      <button class="btn btn-link collapsed text-center mx-auto col-12 mt-5 text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseNeuropsy" aria-expanded="false" aria-controls="collapseNeuropsy">
+      <button (click)="scrollTo('neuropsy')" class="btn btn-link collapsed text-center mx-auto col-12 mt-5 text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseNeuropsy" aria-expanded="false" aria-controls="collapseNeuropsy">
         <div class="col-md-3 col-sm-6 text-center mx-auto">
           <div class="single-service">
             <div class="single-service-img">
@@ -193,7 +193,7 @@
   <!--peau-->
   <div>
     <div id="peau">
-      <button class="btn btn-link collapsed text-center mx-auto col-12 mt-5 text-decoration-none" type="button" data-toggle="collapse" data-target="#collapsePeau" aria-expanded="false" aria-controls="collapsePeau">
+      <button (click)="scrollTo('peau')" class="btn btn-link collapsed text-center mx-auto col-12 mt-5 text-decoration-none" type="button" data-toggle="collapse" data-target="#collapsePeau" aria-expanded="false" aria-controls="collapsePeau">
         <div class="col-md-3 col-sm-6 text-center mx-auto">
           <div class="single-service">
             <div class="single-service-img">
@@ -221,7 +221,7 @@
   <!--coeur et vaisseaux-->
   <div>
     <div id="coeur">
-      <button class="btn btn-link collapsed text-center mx-auto col-12 mt-5 text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseCoeur" aria-expanded="false" aria-controls="collapseCoeur">
+      <button (click)="scrollTo('coeur')" class="btn btn-link collapsed text-center mx-auto col-12 mt-5 text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseCoeur" aria-expanded="false" aria-controls="collapseCoeur">
         <div class="col-md-3 col-sm-6 text-center mx-auto">
           <div class="single-service">
             <div class="single-service-img">
@@ -253,7 +253,7 @@
   <!--génétique-->
   <div>
     <div id="génétique">
-      <button class="btn btn-link collapsed text-center mx-auto col-12 mt-5 text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseGénétique" aria-expanded="false" aria-controls="collapseGénétique">
+      <button (click)="scrollTo('génétique')" class="btn btn-link collapsed text-center mx-auto col-12 mt-5 text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseGénétique" aria-expanded="false" aria-controls="collapseGénétique">
         <div class="col-md-3 col-sm-6 text-center mx-auto">
           <div class="single-service">
             <div class="single-service-img">
@@ -287,7 +287,7 @@
   <!--activité physique-->
   <div>
     <div id="activite_physique">
-      <button class="btn btn-link collapsed text-center mx-auto col-12 mt-5 text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseActivite_physique" aria-expanded="false" aria-controls="collapseActivite_physique">
+      <button (click)="scrollTo('activite_physique')" class="btn btn-link collapsed text-center mx-auto col-12 mt-5 text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseActivite_physique" aria-expanded="false" aria-controls="collapseActivite_physique">
         <div class="col-md-3 col-sm-6 text-center mx-auto">
           <div class="single-service">
             <div class="single-service-img">
@@ -312,7 +312,7 @@
   <!--muscles-->
   <div>
     <div id="muscles">
-      <button class="btn btn-link collapsed text-center mx-auto col-12 mt-5 text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseMuscles" aria-expanded="false" aria-controls="collapseMuscles">
+      <button (click)="scrollTo('muscles')" class="btn btn-link collapsed text-center mx-auto col-12 mt-5 text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseMuscles" aria-expanded="false" aria-controls="collapseMuscles">
         <div class="col-md-3 col-sm-6 text-center mx-auto">
           <div class="single-service">
             <div class="single-service-img">
@@ -334,7 +334,7 @@
   <!--marche-->
   <div>
     <div id="marche">
-      <button class="btn btn-link collapsed text-center mx-auto col-12 mt-5 text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseMarche" aria-expanded="false" aria-controls="collapseMarche">
+      <button (click)="scrollTo('marche')" class="btn btn-link collapsed text-center mx-auto col-12 mt-5 text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseMarche" aria-expanded="false" aria-controls="collapseMarche">
         <div class="col-md-3 col-sm-6 text-center mx-auto">
           <div class="single-service">
             <div class="single-service-img">

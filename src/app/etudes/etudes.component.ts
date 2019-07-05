@@ -29,6 +29,10 @@ export class EtudesComponent implements OnInit {
   document.getElementById(dom).classList.add('show');
   }
 
+  public scrollTo(item) {
+    document.getElementById(item).scrollIntoView({ behavior: "smooth", block: "start", inline: "end" });
+  }
+
   /*
    * ouvre la section passée en paramètre.
    */
